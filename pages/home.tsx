@@ -2,9 +2,6 @@ import Head from 'next/head';
 import { Section, Container, Title } from 'bloomer';
 import Nav from '../components/nav';
 import getVideo, { IVideoMeta } from '../libs/getVideo';
-import VideoCard from '../components/videoCard';
-import { Columns } from 'bloomer/lib/grid/Columns';
-import { Column } from 'bloomer/lib/grid/Column';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import { useState } from 'react';
 
@@ -22,21 +19,8 @@ export default function Home() {
       <Nav pageTitle='首頁'/>
       <Section>
         <Container>
-          <Columns>
-            <Column>
-              <Title>最新影片</Title>
-              <Subtitle>時刻保持最新。</Subtitle>
-              {
-                videoData.map(meta => (
-                  <VideoCard id={meta.id} title={meta.title} desc={meta.desc}></VideoCard>
-                ))
-              }
-            </Column>
-            {/* <Column>
-              <Title>熱門影片</Title>
-              <Subtitle>跟上最新潮流！</Subtitle>
-            </Column> */}
-          </Columns>
+          <Title>歡迎使用 pMediaNode!</Title>
+          <Subtitle>目前已有 {videoData.length} 部影片。</Subtitle>
         </Container>
       </Section>
     </div>
