@@ -6,10 +6,7 @@ import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import { useState } from 'react';
 
 export default function Home() {
-  const [videoData, setVideoData] = useState([] as IVideoMeta[]);
-  getVideo().then(d => d.videos).then(d => {
-    setVideoData(d);
-  });
+  const [videoData, setVideoData] = useState(getVideo().videos);
 
   return (
     <div className="container">
@@ -20,7 +17,7 @@ export default function Home() {
       <Section>
         <Container>
           <Title>歡迎使用 pMediaNode!</Title>
-          <Subtitle>目前已有 {videoData.length} 部影片。</Subtitle>
+          <Subtitle>目前此站台有 {videoData.length} 部影片。</Subtitle>
         </Container>
       </Section>
     </div>

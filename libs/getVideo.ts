@@ -1,5 +1,5 @@
-// docs/api.md
-//   GET /api/get-video
+import videos from '../testdata/video.json';
+
 export interface IVideoEpisodes {
   name: string;
   url: string;
@@ -15,12 +15,10 @@ export interface IVideoMeta {
 }
 
 export interface IVideoData {
-  status: boolean;
   videos: IVideoMeta[];
 }
 
-export default async function getVideo() {
-  const data: Promise<IVideoData> = await fetch('/api/get-video').then(r => r.json())
-
-  return data
+export default function getVideo(): IVideoData {
+  return videos;
 }
+
