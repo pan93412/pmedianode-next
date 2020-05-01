@@ -17,7 +17,7 @@ export default function nav(props: INavProps) {
         <Card style={{ maxWidth: (props.larger? '25em': '15em') }}>
             <CardContent>
                 <Content>
-                    <Title isSize={3}>{props.title}</Title>
+                    <Title isSize={4}>{props.title}<br /><small style={{color: 'lightgray', fontSize: '0.6em'}}>/{props.id}</small></Title>
                     <p>{props.desc}</p>
                 </Content>
             </CardContent>
