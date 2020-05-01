@@ -28,7 +28,7 @@ export default function Home() {
               videoData.map(vid => {
                 return (
                   <Column isSize={'1/3'}>
-                    <VideoCard id={vid.id} title={vid.title} desc={vid.desc}></VideoCard>
+                    <VideoCard id={vid.id} title={vid.title} desc={vid.desc} larger></VideoCard>
                   </Column>
                 );
               })
