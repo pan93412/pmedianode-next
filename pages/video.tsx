@@ -16,11 +16,9 @@ export default function Video() {
       </Head>
       <Nav pageTitle='影片' />
       <Section>
-        <Container>
+        <Container style={{ marginBottom: '3em' }}>
           <Title>影片庫</Title>
         </Container>
-      </Section>
-      <Section>
         <Container style={{ marginBottom: '3em' }}>
           <Level>
             <LevelLeft>
