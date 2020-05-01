@@ -15,6 +15,7 @@ export interface IVideoMeta {
 }
 
 export interface IVideoData {
+  status: boolean;
   videos: IVideoMeta[];
 }
 
