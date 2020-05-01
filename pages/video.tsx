@@ -23,11 +23,17 @@ export default function Home() {
       </Section>
       <Section>
         <Container>
-          {
-            videoData.map(vid => {
-              return <VideoCard id={vid.id} title={vid.title} desc={vid.desc}></VideoCard>
-            })
-          }    
+          <Columns isMultiline>
+            {
+              videoData.map(vid => {
+                return (
+                  <Column isSize={'1/3'}>
+                    <VideoCard id={vid.id} title={vid.title} desc={vid.desc}></VideoCard>
+                  </Column>
+                );
+              })
+            }  
+          </Columns>  
         </Container>
       </Section>
     </div>
