@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Section, Container, Title, Columns, Column } from 'bloomer';
+import { Section, Container, Title, Columns, Column, LevelLeft, LevelItem, Field, Control, Input, Button, LevelRight, Level } from 'bloomer';
 import Nav from '../components/nav';
 import getVideo from '../libs/getVideo';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
@@ -14,14 +14,34 @@ export default function Home() {
       <Head>
         <title>pMediaNode / 影片</title>
       </Head>
-      <Nav pageTitle='影片'/>
+      <Nav pageTitle='影片' />
       <Section>
         <Container>
           <Title>影片庫</Title>
-          <Subtitle>目前此站台有 {videoData.length} 部影片。</Subtitle>
         </Container>
       </Section>
       <Section>
+        <Container style={{ marginBottom: '3em' }}>
+          <Level>
+            <LevelLeft>
+              <LevelItem>
+                <Subtitle tag='p' isSize={5}><strong>{videoData.length}</strong> 部影片</Subtitle>
+              </LevelItem>
+            </LevelLeft>
+            <LevelRight>
+              <LevelItem>
+                <Field hasAddons>
+                  <Control>
+                    <Input placeholder='搜尋影片...' />
+                  </Control>
+                  <Control>
+                    <Button>搜尋</Button>
+                  </Control>
+                </Field>
+              </LevelItem>
+            </LevelRight>
+          </Level>
+        </Container>
         <Container>
           <Columns isMultiline>
             {
@@ -32,8 +52,8 @@ export default function Home() {
                   </Column>
                 );
               })
-            }  
-          </Columns>  
+            }
+          </Columns>
         </Container>
       </Section>
     </div>
