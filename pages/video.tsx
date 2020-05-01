@@ -6,7 +6,7 @@ import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import { useState } from 'react';
 import VideoCard from '../components/videoCard';
 
-export default function Home() {
+export default function Video() {
   const [videoData, setVideoData] = useState(getVideo().videos);
 
   return (
