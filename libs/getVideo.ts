@@ -21,7 +21,7 @@ export interface IVideoData {
 }
 
 export default async function getVideo() {
-  const data = await fetch('/api/get-video').then(r => r.json())
+  const data: Promise<IVideoData> = await fetch('/api/get-video').then(r => r.json())
 
   return data
 }
