@@ -32,10 +32,10 @@ export default function Home() {
                 ))
               }
             </Column>
-            <Column>
+            {/* <Column>
               <Title>熱門影片</Title>
               <Subtitle>跟上最新潮流！</Subtitle>
-            </Column>
+            </Column> */}
           </Columns>
         </Container>
       </Section>
