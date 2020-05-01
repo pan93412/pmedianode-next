@@ -9,11 +9,12 @@ export interface INavProps {
     id: string;
     title: string;
     desc: string;
+    larger?: boolean;
 }
 
 export default function nav(props: INavProps) {
     return (
-        <Card style={{ maxWidth: '15em' }}>
+        <Card style={{ maxWidth: (props.larger? '25em': '15em') }}>
             <CardContent>
                 <Content>
                     <Title isSize={3}>{props.title}</Title>
