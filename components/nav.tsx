@@ -40,8 +40,8 @@ export default function nav(props: NavProps) {
                     <NavbarItem hasDropdown isHoverable>
                         <NavbarLink>設定 & 關於</NavbarLink>
                         <NavbarDropdown>
-                            <NavbarItem>偏好設定</NavbarItem>
-                            <NavbarItem>關於</NavbarItem>
+                            <Link href='/preferences'><NavbarItem href='#'>偏好設定</NavbarItem></Link>
+                            <Link href='/about'><NavbarItem href='#'>關於</NavbarItem></Link>
                         </NavbarDropdown>
                     </NavbarItem>
                 </NavbarEnd>
