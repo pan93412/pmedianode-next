@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 // docs/api.md
 //   GET /api/get-video
 export interface IVideoEpisodes {
