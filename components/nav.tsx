@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 export interface NavProps {
     pageTitle: string;
-    user?: string;
+    // user?: string;
 }
 
 export default function nav(props: NavProps) {
@@ -35,7 +35,8 @@ export default function nav(props: NavProps) {
                     <NavbarItem href='#/'>影片</NavbarItem>
                     <NavbarItem href='#/'>公告</NavbarItem>
                 </NavbarStart>
-                <NavbarEnd>
+                {// TODO: I will do this as long as v1 released.
+                /* <NavbarEnd>
                     <NavbarItem hasDropdown isHoverable>
                         <NavbarLink href='#/documentation'>嗨，{props.user || '訪客'}</NavbarLink>
                         {
@@ -54,7 +55,7 @@ export default function nav(props: NavProps) {
                             )
                         }
                     </NavbarItem>
-                </NavbarEnd>
+                </NavbarEnd> */}
             </NavbarMenu>
         </Navbar>
     );
