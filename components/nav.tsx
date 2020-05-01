@@ -11,6 +11,7 @@ import {
     NavbarLink,
 } from 'bloomer';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export interface NavProps {
     pageTitle: string;
@@ -31,10 +32,19 @@ export default function nav(props: NavProps) {
             </NavbarBrand>
             <NavbarMenu isActive={isActive} onClick={setIsActive}>
                 <NavbarStart>
-                    <NavbarItem href='#/'>首頁</NavbarItem>
-                    <NavbarItem href='#/'>影片</NavbarItem>
-                    <NavbarItem href='#/'>公告</NavbarItem>
+                    <Link href='/home'><NavbarItem href='#'>首頁</NavbarItem></Link>
+                    <Link href='/video'><NavbarItem href='#'>影片</NavbarItem></Link>
+                    <Link href='/announce'><NavbarItem href='#'>公告</NavbarItem></Link>
                 </NavbarStart>
+                <NavbarEnd>
+                    <NavbarItem hasDropdown isHoverable>
+                        <NavbarLink>設定 & 關於</NavbarLink>
+                        <NavbarDropdown>
+                            <NavbarItem>偏好設定</NavbarItem>
+                            <NavbarItem>關於</NavbarItem>
+                        </NavbarDropdown>
+                    </NavbarItem>
+                </NavbarEnd>
                 {// TODO: I will do this as long as v1 released.
                 /* <NavbarEnd>
                     <NavbarItem hasDropdown isHoverable>
