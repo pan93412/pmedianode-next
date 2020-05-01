@@ -5,6 +5,7 @@
 Content-Type: application/json; charset=UTF-8
 
 {
+  "status": true,
   "videos": [
     {
       "id": "test-vid",
