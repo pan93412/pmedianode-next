@@ -3,7 +3,7 @@ import { Section, Container, Title, Columns, Column, Tag, Content } from 'bloome
 import Nav from '../components/nav';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import packageJson from '../package.json'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function useSpecialTag(version: string): string[] {
   let _specialTag = '';
