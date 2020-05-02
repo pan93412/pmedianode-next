@@ -1,9 +1,11 @@
 import Head from 'next/head';
-import { Section, Container, Title, Columns, Column } from 'bloomer';
-import Nav from '../components/nav';
+import {
+  Section, Container, Title, Columns, Column,
+} from 'bloomer';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Router from 'next/router';
+import Nav from '../components/nav';
 
 export default function About() {
   useEffect(() => {
@@ -15,13 +17,15 @@ export default function About() {
       <Head>
         <title>pMediaNode / 404</title>
       </Head>
-      <Nav pageTitle='OAO' />
+      <Nav pageTitle="OAO" />
       <Section>
         <Container>
           <Columns>
             <Column>
               <Title isSize={1}>
-                OAO <sup>404</sup>
+                OAO
+                {' '}
+                <sup>404</sup>
               </Title>
               <Subtitle isSize={5}>您欲存取的頁面不存在! 5 秒後返回首頁。</Subtitle>
             </Column>
@@ -29,5 +33,5 @@ export default function About() {
         </Container>
       </Section>
     </div>
-  )
+  );
 }

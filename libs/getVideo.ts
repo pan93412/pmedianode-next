@@ -21,4 +21,3 @@ export interface IVideoData {
 export default function getVideo(): IVideoData {
   return videos;
 }
-
