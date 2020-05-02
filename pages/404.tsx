@@ -26,7 +26,7 @@ export default function About() {
             </Column>
             <Column>
               <Content>
-                <p>可能是這些原因：</p>
+                <p>可能是這些原因:</p>
                 <ul>
                   <li>此頁面已被刪除。</li>
                   <li>您輸入的網址錯誤。</li>
