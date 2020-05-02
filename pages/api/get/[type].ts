@@ -35,5 +35,11 @@ export default function getAPI(req: NextApiRequest, res: NextApiResponse) {
 }
 
 export async function getStaticPaths() {
-  return ['video', 'audio'];
+  return {
+    paths: [
+      { params: { type: 'video' } },
+      { params: { type: 'audio' } },
+    ],
+    fallback: false,
+  };
 }
