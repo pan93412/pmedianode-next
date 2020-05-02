@@ -28,7 +28,10 @@ export default function nav({
               {id}
             </small>
           </Title>
-          <p>{desc}</p>
+          <p>
+            {desc.substr(0, 50)}
+            {desc.length > 50 && '...'}
+          </p>
         </Content>
       </CardContent>
       <CardFooter>
