@@ -7,7 +7,7 @@ import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import React, { FormEvent } from 'react';
 import Nav from '../components/nav';
 import getVideo, { IVideoMeta } from '../libs/getVideo';
-import VideoCard from '../components/videoCard';
+import MediaCard, { ECardContext as cardCtx } from '../components/mediaCard';
 
 interface IProps {}
 interface IState {
@@ -95,7 +95,13 @@ export default class Video extends React.Component<IProps, IState> {
               {
                 videoData.map((vid) => (
                   <Column isSize="1/3">
-                    <VideoCard id={vid.id} title={vid.title} desc={vid.desc} larger />
+                    <MediaCard
+                      context={cardCtx.video}
+                      id={vid.id}
+                      title={vid.title}
+                      desc={vid.desc}
+                      larger
+                    />
                   </Column>
                 ))
               }

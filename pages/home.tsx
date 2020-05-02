@@ -6,7 +6,7 @@ import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import React, { useState } from 'react';
 import Nav from '../components/nav';
 import getVideo from '../libs/getVideo';
-import VideoCard from '../components/videoCard';
+import MediaCard, { ECardContext as cardCtx } from '../components/mediaCard';
 
 export default function Home() {
   const [videoData] = useState(getVideo().videos);
@@ -38,7 +38,8 @@ export default function Home() {
               {
                 videoData.length > 0
                   ? (
-                    <VideoCard
+                    <MediaCard
+                      context={cardCtx.video}
                       id={latestVideo.id}
                       title={latestVideo.title}
                       desc={latestVideo.desc}
