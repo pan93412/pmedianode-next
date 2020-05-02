@@ -1,0 +1,21 @@
+{
+  "audios": [
+    {
+      "id": "test-music-1",
+      "title": "測試音樂 1",
+      "desc": "",
+      "author": "",
+      "tags": [],
+      "tracks": [
+        {
+          "name": "Audio Track 1",
+          "url": "/audio/test-music-1/1/ummmm.mp3"
+        },
+        {
+          "name": "Audio Track 2",
+          "url": "/audio/test-music-1/2/testing.mp3"
+        }
+      ]
+    }
+  ]
+}
