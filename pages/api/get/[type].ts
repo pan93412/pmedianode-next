@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse, GetStaticPaths } from 'next';
 import getVideo from '../../../libs/getVideo';
 import getAudio from '../../../libs/getAudio';
 
@@ -34,12 +34,10 @@ export default function getAPI(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { type: 'video' } },
-      { params: { type: 'audio' } },
-    ],
-    fallback: false,
-  };
-}
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [
+    { params: { type: 'video' } },
+    { params: { type: 'audio' } },
+  ],
+  fallback: false,
+});
