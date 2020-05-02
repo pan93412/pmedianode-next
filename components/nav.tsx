@@ -36,9 +36,9 @@ export default function nav({
       <NavbarMenu isActive={isActive} onClick={setIsActive}>
         <NavbarStart>
           <Link href="/home"><NavbarItem href="#">首頁</NavbarItem></Link>
-          <Link href="/video"><NavbarItem href="#">影片</NavbarItem></Link>
-          <Link href="/audio"><NavbarItem href="#">音樂</NavbarItem></Link>
-          <Link href="/announce"><NavbarItem href="#">公告</NavbarItem></Link>
+          <Link href="/library/[type]" as="/library/video"><NavbarItem href="#">影片</NavbarItem></Link>
+          <Link href="/library/[type]" as="/library/audio"><NavbarItem href="#">音樂</NavbarItem></Link>
+          <Link href="/library/[type]" as="/library/announce"><NavbarItem href="#">公告</NavbarItem></Link>
         </NavbarStart>
         <NavbarEnd>
           <NavbarItem hasDropdown isHoverable>
@@ -49,27 +49,6 @@ export default function nav({
             </NavbarDropdown>
           </NavbarItem>
         </NavbarEnd>
-        {// TODO: I will do this as long as v1 released.
-                /* <NavbarEnd>
-                    <NavbarItem hasDropdown isHoverable>
-                        <NavbarLink href='#/documentation'>嗨，{props.user || '訪客'}</NavbarLink>
-                        {
-                            props.user ?
-                            (
-                                <NavbarDropdown>
-                                    <NavbarItem>個人資料</NavbarItem>
-                                    <NavbarItem>登出</NavbarItem>
-                                </NavbarDropdown>
-                            ) :
-                            (
-                                <NavbarDropdown>
-                                <NavbarItem>登入</NavbarItem>
-                                <NavbarItem>註冊</NavbarItem>
-                                </NavbarDropdown>
-                            )
-                        }
-                    </NavbarItem>
-                </NavbarEnd> */}
       </NavbarMenu>
     </Navbar>
   );
