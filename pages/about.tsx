@@ -51,7 +51,7 @@ export default function About() {
                   && <Tag isColor={specialTagColor}>{specialTag}</Tag>
                 }
               </Title>
-              <Subtitle isSize={6}>嶄新的輕量影片寄存平台。</Subtitle>
+              <Subtitle isSize={6}>嶄新的輕量媒體寄存平台。</Subtitle>
             </Column>
             <Column>
               <Content>
