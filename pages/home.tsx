@@ -23,6 +23,7 @@ export default function Home() {
           <Title>歡迎使用 pMediaNode!</Title>
           <Subtitle>
             目前此站台有
+            {' '}
             {videoData.length}
             {' '}
             部影片。

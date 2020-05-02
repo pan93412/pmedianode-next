@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import Nav from '../components/nav';
 import packageJson from '../package.json';
 
-function useSpecialTag(version: string): string[] {
+function useSpecialTag(version: string) {
   let theSpecialTag = '';
   let theSpecialTagColor = '';
 
@@ -27,6 +27,7 @@ function useSpecialTag(version: string): string[] {
 
   return [specialTag, specialTagColor];
 }
+
 export default function About() {
   const { version } = packageJson;
   const [specialTag, specialTagColor] = useSpecialTag(version);
@@ -43,6 +44,7 @@ export default function About() {
             <Column>
               <Title isSize={4}>
                 pMediaNode
+                {' '}
                 <Tag isColor="success">NEXT</Tag>
                 {
                   specialTag !== ''

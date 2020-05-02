@@ -28,6 +28,7 @@ export default function nav({
       <NavbarBrand>
         <NavbarItem>
           pMediaNode |
+          {' '}
           {pageTitle}
         </NavbarItem>
         <NavbarBurger isActive={isActive} onClick={setIsActive} />
