@@ -5,13 +5,12 @@
   HTTP Error 404, OAO.
 - `/`: index.tsx\
   It will redirect to `/home` by default.
-- `/home`: home.tsx\
-  The homepage of pMediaNode.
-- `/video`: video.tsx\
-  The page showing all the videos in the instance.
-- `/about`: about.tsx\
-  About page.
-- `/api/get-video`: api/get-video.ts\
-  An API that fetching all the videos in the instance.\
-  You can read more at `/docs/api.md`.
-
+- `/home`: The homepage of pMediaNode.
+- `/about`: About page.
+- `/library`
+  - `/video`: Show all the videos on this instance.
+  - `/audio`: Show all the audios on this instance.
+- `/api`
+  - `/get`
+    - `/video`
+    - `/audio`: For further informations, please refer to `/docs/api.md`
