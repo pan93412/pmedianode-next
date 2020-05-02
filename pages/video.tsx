@@ -26,16 +26,23 @@ export default class Video extends React.Component<IProps, IState> {
   }
 
   updateVideoData(query: string) {
+    const subFind = (str1: string, str2: string) => (
+      str1.toLowerCase().includes(str2.toLowerCase())
+    );
     const newResult = getVideo().videos.filter((meta) => {
+      let found = false;
       if (query === '') return true;
-      if (
-        meta.id === query
-        || meta.author === query
-        || meta.title.includes(query)
-        || meta.desc.includes(query)
-        || meta.tags.includes(query)
-      ) return true;
-      return false;
+      query.toLowerCase().split(' ').forEach((q) => {
+        if (
+          meta.id === query
+          || meta.author.toLowerCase() === query.toLowerCase()
+          || subFind(meta.title, q)
+          || subFind(meta.desc, q)
+          || meta.tags.map((v) => v.toLowerCase())
+            .includes(q.toLowerCase())
+        ) found = true;
+      });
+      return found;
     });
 
     this.setState({ videoData: newResult });
