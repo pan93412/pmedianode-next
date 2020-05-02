@@ -6,7 +6,7 @@ import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import React from 'react';
 import Nav from '../components/nav';
 
-export default function About() {
+export default function Error404() {
   return (
     <div className="container">
       <Head>
