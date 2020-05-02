@@ -5,9 +5,10 @@ import {
 } from 'bloomer';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import React, { FormEvent } from 'react';
-import Nav from '../components/nav';
-import getVideo, { IVideoMeta } from '../libs/getVideo';
-import MediaCard, { ECardContext as cardCtx } from '../components/mediaCard';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Nav from '../../components/nav';
+import getVideo, { IVideoMeta } from '../../libs/getVideo';
+import MediaCard, { ECardContext as cardCtx } from '../../components/mediaCard';
 
 interface IProps {}
 interface IState {
@@ -112,3 +113,18 @@ export default class Video extends React.Component<IProps, IState> {
     );
   }
 }
+
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [
+    { params: { type: 'video' } },
+    { params: { type: 'audio' } },
+  ],
+  fallback: true,
+});
+
+
+export const getStaticProps: GetStaticProps = async ({ params }) => ({
+  props: {
+    type: params?.type,
+  },
+});
