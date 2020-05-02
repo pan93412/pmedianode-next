@@ -1,23 +1,18 @@
 import Head from 'next/head';
 import {
-  Section, Container, Title, Columns, Column,
+  Section, Container, Title, Columns, Column, Content,
 } from 'bloomer';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
-import React, { useEffect } from 'react';
-import Router from 'next/router';
+import React from 'react';
 import Nav from '../components/nav';
 
 export default function About() {
-  useEffect(() => {
-    setTimeout(() => Router.push('/home'), 5000); // 5s
-  });
-
   return (
     <div className="container">
       <Head>
         <title>pMediaNode / 404</title>
       </Head>
-      <Nav pageTitle="OAO" />
+      <Nav pageTitle="404" />
       <Section>
         <Container>
           <Columns>
@@ -27,7 +22,17 @@ export default function About() {
                 {' '}
                 <sup>404</sup>
               </Title>
-              <Subtitle isSize={5}>您欲存取的頁面不存在! 5 秒後返回首頁。</Subtitle>
+              <Subtitle isSize={5}>您欲存取的頁面不存在!</Subtitle>
+            </Column>
+            <Column>
+              <Content>
+                <p>可能是這些原因：</p>
+                <ul>
+                  <li>此頁面已被刪除。</li>
+                  <li>您輸入的網址錯誤。</li>
+                  <li>此頁面仍在開發中。</li>
+                </ul>
+              </Content>
             </Column>
           </Columns>
         </Container>
