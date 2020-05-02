@@ -10,7 +10,7 @@ import VideoCard from '../components/videoCard';
 
 export default function Home() {
   const [videoData] = useState(getVideo().videos);
-  const [latestVideo] = useState(getVideo().videos[videoData.length - 1]);
+  const [latestVideo] = useState(getVideo().videos[0]);
 
   return (
     <div className="container">
@@ -46,8 +46,8 @@ export default function Home() {
                   )
                   : (
                     <div>
-                      <b>喔不。</b>
-                      這站台空空如也，連一則影片都沒有!
+                      <Title isSize={5}>喔不。</Title>
+                      <Subtitle isSize={6}>這站台空空如也，連一則影片都沒有!</Subtitle>
                     </div>
                   )
               }
