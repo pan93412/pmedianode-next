@@ -37,6 +37,8 @@ export default function nav({
         <NavbarStart>
           <Link href="/home"><NavbarItem href="#">首頁</NavbarItem></Link>
           <Link href="/video"><NavbarItem href="#">影片</NavbarItem></Link>
+          <Link href="/audio"><NavbarItem href="#">音樂</NavbarItem></Link>
+          <Link href="/photo"><NavbarItem href="#">圖片</NavbarItem></Link>
           <Link href="/announce"><NavbarItem href="#">公告</NavbarItem></Link>
         </NavbarStart>
         <NavbarEnd>
