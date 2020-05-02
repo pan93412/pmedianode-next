@@ -1,6 +1,6 @@
 {
   "name": "pmedianode-next",
-  "version": "0.1.0-dev+b3d8e4b",
+  "version": "0.1.0-dev+8717f39",
   "private": true,
   "scripts": {
     "dev": "next dev",
