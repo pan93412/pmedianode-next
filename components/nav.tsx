@@ -36,9 +36,9 @@ export default function nav({
       <NavbarMenu isActive={isActive} onClick={setIsActive}>
         <NavbarStart>
           <Link href="/home"><NavbarItem href="#">首頁</NavbarItem></Link>
-          <Link href="/library/[type]" as="/library/video"><NavbarItem href="#">影片</NavbarItem></Link>
-          <Link href="/library/[type]" as="/library/audio"><NavbarItem href="#">音樂</NavbarItem></Link>
-          <Link href="/library/[type]" as="/library/announce"><NavbarItem href="#">公告</NavbarItem></Link>
+          <Link href="/library/video"><NavbarItem href="#">影片</NavbarItem></Link>
+          <Link href="/library/audio"><NavbarItem href="#">音樂</NavbarItem></Link>
+          <Link href="/library/announce"><NavbarItem href="#">公告</NavbarItem></Link>
         </NavbarStart>
         <NavbarEnd>
           <NavbarItem hasDropdown isHoverable>
