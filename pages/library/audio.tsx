@@ -6,73 +6,80 @@ import {
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import React, { FormEvent } from 'react';
 import Nav from '../../components/nav';
-import getVideo, { IVideoMeta } from '../../libs/getVideo';
+import getAudio, { IAudioMeta } from '../../libs/getAudio';
 import MediaCard, { ECardContext as cardCtx } from '../../components/mediaCard';
 
 interface IProps {}
 interface IState {
-  videoData: IVideoMeta[];
+  mediaData: IAudioMeta[];
 }
 
-export default class Video extends React.Component<IProps, IState> {
+function getData() {
+  return getAudio().audios;
+}
+
+const subFind = (str1: string, str2: string) => (
+  str1.toLowerCase().includes(str2.toLowerCase())
+);
+
+export default class Audio extends React.Component<IProps, IState> {
+  ctx = cardCtx.video;
+
   constructor(props: Readonly<{}>) {
     super(props);
     this.state = {
-      videoData: getVideo().videos,
+      mediaData: getData(),
     };
 
     this.search = this.search.bind(this);
-    this.updateVideoData = this.updateVideoData.bind(this);
+    this.updateMediaData = this.updateMediaData.bind(this);
   }
 
-  updateVideoData(query: string) {
-    const subFind = (str1: string, str2: string) => (
-      str1.toLowerCase().includes(str2.toLowerCase())
-    );
-    const newResult = getVideo().videos.filter((meta) => {
-      let found = false;
-      if (query === '') return true;
-      query.toLowerCase().split(' ').forEach((q) => {
-        if (
-          meta.id === query
-          || meta.author.toLowerCase() === query.toLowerCase()
-          || subFind(meta.title, q)
-          || subFind(meta.desc, q)
-          || meta.tags.map((v) => v.toLowerCase())
-            .includes(q.toLowerCase())
-        ) found = true;
-      });
-      return found;
-    });
-
-    this.setState({ videoData: newResult });
+  updateMediaData(mediaData: IAudioMeta[]) {
+    this.setState({ mediaData });
   }
 
   search(e: FormEvent<HTMLInputElement>) {
-    this.updateVideoData(e.currentTarget.value);
+    const query = e.currentTarget.value;
+    this.updateMediaData(getData().filter((meta) => {
+      let found = false;
+      if (query !== '') {
+        query.toLowerCase().split(' ').forEach((q) => {
+          if (
+            meta.id === query
+            || meta.author.toLowerCase() === query.toLowerCase()
+            || subFind(meta.title, q)
+            || subFind(meta.desc, q)
+            || meta.tags.map((v) => v.toLowerCase())
+              .includes(q.toLowerCase())
+          ) found = true;
+        });
+      }
+      return found;
+    }));
   }
 
   render() {
-    const { videoData } = this.state;
+    const { mediaData } = this.state;
 
     return (
       <div className="container">
         <Head>
-          <title>pMediaNode / 影片</title>
+          <title>pMediaNode / 音樂</title>
         </Head>
-        <Nav pageTitle="影片" />
+        <Nav pageTitle="音樂" />
         <Section>
           <Container style={{ marginBottom: '3em' }}>
-            <Title>影片庫</Title>
+            <Title>音樂庫</Title>
           </Container>
           <Container style={{ marginBottom: '3em' }}>
             <Level>
               <LevelLeft>
                 <LevelItem>
                   <Subtitle tag="p" isSize={5}>
-                    <strong>{videoData.length}</strong>
+                    <strong>{mediaData.length}</strong>
                     {' '}
-                    部影片
+                    張專輯
                   </Subtitle>
                 </LevelItem>
               </LevelLeft>
@@ -80,11 +87,8 @@ export default class Video extends React.Component<IProps, IState> {
                 <LevelItem>
                   <Field hasAddons>
                     <Control>
-                      <Input onChange={this.search} placeholder="搜尋影片..." />
+                      <Input onChange={this.search} placeholder="搜尋專輯..." />
                     </Control>
-                    {/* <Control>
-                      <Button onClick={doSearch()}>搜尋</Button>
-                    </Control> */}
                   </Field>
                 </LevelItem>
               </LevelRight>
@@ -93,13 +97,13 @@ export default class Video extends React.Component<IProps, IState> {
           <Container>
             <Columns isMultiline>
               {
-                videoData.map((vid) => (
+                mediaData.map((m) => (
                   <Column isSize="1/3">
                     <MediaCard
-                      context={cardCtx.video}
-                      id={vid.id}
-                      title={vid.title}
-                      desc={vid.desc}
+                      context={this.ctx}
+                      id={m.id}
+                      title={m.title}
+                      desc={m.desc}
                       larger
                     />
                   </Column>
