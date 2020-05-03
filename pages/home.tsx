@@ -3,14 +3,30 @@ import {
   Section, Container, Title, Columns, Column,
 } from 'bloomer';
 import { Subtitle } from 'bloomer/lib/elements/Subtitle';
-import React, { useState } from 'react';
+import React from 'react';
 import Nav from '../components/nav';
-import getVideo from '../libs/getVideo';
+import getVideo, { IVideoMeta } from '../libs/getVideo';
+import getAudio, { IAudioMeta } from '../libs/getAudio';
 import MediaCard, { ECardContext as cardCtx } from '../components/mediaCard';
 
+const getLatest = (content: Array<IVideoMeta|IAudioMeta>) => content[0];
+
 export default function Home() {
-  const [videoData] = useState(getVideo().videos);
-  const [latestVideo] = useState(getVideo().videos[0]);
+  const [
+    videoData,
+    audioData,
+  ] = [
+    getVideo().videos,
+    getAudio().audios,
+  ];
+
+  const [
+    latestVideo,
+    latestAudio,
+  ] = [
+    getLatest(videoData),
+    getLatest(audioData),
+  ];
 
   return (
     <div className="container">
@@ -26,7 +42,11 @@ export default function Home() {
             {' '}
             {videoData.length}
             {' '}
-            部影片。
+            部影片和
+            {' '}
+            {audioData.length}
+            {' '}
+            張專輯。
           </Subtitle>
         </Container>
       </Section>
@@ -48,7 +68,27 @@ export default function Home() {
                   : (
                     <div>
                       <Title isSize={5}>喔不。</Title>
-                      <Subtitle isSize={6}>這站台空空如也，連一則影片都沒有!</Subtitle>
+                      <Subtitle isSize={6}>這站台沒有任何影片!</Subtitle>
+                    </div>
+                  )
+              }
+            </Column>
+            <Column>
+              <Title isSize={4}>最新專輯</Title>
+              {
+                audioData.length > 0
+                  ? (
+                    <MediaCard
+                      context={cardCtx.audio}
+                      id={latestAudio.id}
+                      title={latestAudio.title}
+                      desc={latestAudio.desc}
+                    />
+                  )
+                  : (
+                    <div>
+                      <Title isSize={5}>喔不。</Title>
+                      <Subtitle isSize={6}>這站台沒有任何音樂!</Subtitle>
                     </div>
                   )
               }
