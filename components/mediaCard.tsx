@@ -33,8 +33,6 @@ export default function MediaCard({
             {title}
             <br />
             <small style={{ color: 'lightgray', fontSize: '0.6em' }}>
-              {`[${context}]`}
-              {' '}
               {id}
             </small>
           </Title>
