@@ -9,7 +9,6 @@ import React from 'react';
 export enum ECardContext {
   video = 'video',
   audio = 'audio',
-  photo = 'photo',
 }
 
 export interface ICardProps {
@@ -23,11 +22,10 @@ export interface ICardProps {
 export default function MediaCard({
   context, larger, title, id, desc,
 }: ICardProps) {
-  let prefix = '';
+  let type = '';
 
-  if (context === ECardContext.video) prefix = 'vid-';
-  else if (context === ECardContext.audio) prefix = 'aud-';
-  else if (context === ECardContext.photo) prefix = 'pho-';
+  if (context === ECardContext.video) type = 'video';
+  else if (context === ECardContext.audio) type = 'audio';
 
   return (
     <Card style={{ maxWidth: (larger ? '25em' : '15em') }}>
@@ -37,7 +35,8 @@ export default function MediaCard({
             {title}
             <br />
             <small style={{ color: 'lightgray', fontSize: '0.6em' }}>
-              /
+              {`[${type}]`}
+              {' '}
               {id}
             </small>
           </Title>
@@ -48,7 +47,7 @@ export default function MediaCard({
         </Content>
       </CardContent>
       <CardFooter>
-        <Link href={`/play/${prefix}${id}`}><CardFooterItem href="#">播放</CardFooterItem></Link>
+        <Link href={`/play/${type}/${id}`}><CardFooterItem href="#">播放</CardFooterItem></Link>
       </CardFooter>
     </Card>
   );
