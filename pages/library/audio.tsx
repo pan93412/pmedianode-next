@@ -23,7 +23,7 @@ const subFind = (str1: string, str2: string) => (
 );
 
 export default class Audio extends React.Component<IProps, IState> {
-  ctx = cardCtx.video;
+  ctx = cardCtx.audio;
 
   constructor(props: Readonly<{}>) {
     super(props);
