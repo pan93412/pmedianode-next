@@ -5,7 +5,14 @@ import {
 import React from 'react';
 import Nav from '../components/nav';
 
+const imgOf404 = [
+  'https://httpstatusdogs.com/img/404.jpg',
+  'https://http.cat/404',
+];
+
 export default function Error404() {
+  const img = imgOf404[Math.floor(Math.random() * 1.9)];
+
   return (
     <div className="container">
       <Head>
@@ -16,7 +23,7 @@ export default function Error404() {
         <Container>
           <Columns>
             <Column>
-              <img src="https://http.cat/404" alt="http.cat - 404 Not Found" width="100%" height="100%" />
+              <img src={img} alt="404 Not Found" width="100%" height="100%" />
             </Column>
             <Column>
               <Content>
