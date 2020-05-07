@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import {
-  Section, Container, Title, Columns, Column, Content,
+  Section, Container, Columns, Column, Content,
 } from 'bloomer';
-import { Subtitle } from 'bloomer/lib/elements/Subtitle';
 import React from 'react';
 import Nav from '../components/nav';
 
@@ -17,12 +16,7 @@ export default function Error404() {
         <Container>
           <Columns>
             <Column>
-              <Title isSize={1}>
-                OAO
-                {' '}
-                <sup>404</sup>
-              </Title>
-              <Subtitle isSize={5}>您欲存取的頁面不存在!</Subtitle>
+              <img src="https://http.cat/404" alt="http.cat - 404 Not Found" width="100%" height="100%" />
             </Column>
             <Column>
               <Content>
