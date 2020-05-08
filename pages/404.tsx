@@ -11,7 +11,7 @@ const imgOf404 = [
 ];
 
 export default function Error404() {
-  const img = imgOf404[Math.floor(Math.random() * 1.9)];
+  const img = imgOf404[Math.floor(Math.random() * 2)];
 
   return (
     <div className="container">
