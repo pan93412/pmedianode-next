@@ -8,16 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/node": "^13.13.4",
+    "@types/react": "^16.9.34",
     "bloomer": "^0.6.5",
     "bulma": "^0.8.2",
     "next": "9.3.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "sass": "^1.26.5"
+    "sass": "^1.26.5",
+    "typescript": "^3.8.3",
+    "yaml": "^1.9.2"
   },
   "devDependencies": {
-    "@types/node": "^13.13.4",
-    "@types/react": "^16.9.34",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",
@@ -25,7 +27,6 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.1",
-    "typescript": "^3.8.3"
+    "eslint-plugin-react-hooks": "^2.5.1"
   }
 }
