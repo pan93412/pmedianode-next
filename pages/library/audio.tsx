@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import {
   Section, Container, Title, Columns, Column, LevelLeft,
   LevelItem, Field, Control, Input, LevelRight, Level,
@@ -64,9 +63,6 @@ export default class Audio extends React.Component<IProps, IState> {
 
     return (
       <div className="container">
-        <Head>
-          <title>pMediaNode / 音樂</title>
-        </Head>
         <Nav pageTitle="音樂" />
         <Section>
           <Container style={{ marginBottom: '3em' }}>

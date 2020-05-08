@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import {
   Section, Container, Title, Columns, Column, LevelLeft,
   LevelItem, Field, Control, Input, LevelRight, Level,
@@ -61,9 +60,6 @@ export default class Video extends React.Component<IProps, IState> {
 
     return (
       <div className="container">
-        <Head>
-          <title>pMediaNode / 公告</title>
-        </Head>
         <Nav pageTitle="公告" />
         <Section>
           <Container style={{ marginBottom: '3em' }}>

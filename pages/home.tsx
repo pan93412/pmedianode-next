@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import {
   Section, Container, Title, Columns, Column,
 } from 'bloomer';
@@ -30,9 +29,6 @@ export default function Home() {
 
   return (
     <div className="container">
-      <Head>
-        <title>pMediaNode / 首頁</title>
-      </Head>
       <Nav pageTitle="首頁" />
       <Section>
         <Container>

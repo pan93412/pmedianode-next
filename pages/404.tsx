@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import {
   Section, Container, Columns, Column, Content,
 } from 'bloomer';
@@ -15,9 +14,6 @@ export default function Error404() {
 
   return (
     <div className="container">
-      <Head>
-        <title>pMediaNode / 404</title>
-      </Head>
       <Nav pageTitle="404" />
       <Section>
         <Container>
